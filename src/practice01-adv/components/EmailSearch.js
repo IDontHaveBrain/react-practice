@@ -14,10 +14,15 @@ const EmailSearch = ({setView, data, filter}) => {
     });
 
     const onSearchClick = useCallback(() => {
-        // if (!filter) {
-        const temp = filter(data, value);
-        console.log(temp);
-        setView(temp);
+        if (!filter) {
+            console.log('필터 미설정, 기본필터 실행');
+            const temp = defaultFilter(data, value);
+            setView(temp);
+        }else {
+            console.log('필터 설정, 커스텀 필터 실행');
+            const temp = filter(data, value);
+            setView(temp);
+        }
     });
 
     const autoSearch = useEffect(() => {
