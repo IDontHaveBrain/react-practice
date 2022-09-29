@@ -12,6 +12,7 @@ import MenuBase from "./menu/MenuBase";
 import {Box, createTheme, CssBaseline, StyledEngineProvider, ThemeProvider} from "@mui/material";
 import Practice01Adv from "./practice01-adv/Practice01Adv";
 import NoImmer from "./immer-practice/NoImmer";
+import WithImmer from "./immer-practice/WithImmer";
 
 const theme = createTheme({});
 
@@ -27,7 +28,8 @@ function App() {
                             <Route path={'/email'} element={<Practice01/>}/>
                             <Route path={'/emailAdv'} element={<Practice01Adv/>}/>
                             <Route path={'/webexcel'} element={<WebExcel/>}/>
-                            <Route path={'/NoImmer'} element={<NoImmer/>}/>
+                            <Route path={'/noimmer'} element={<NoImmer/>}/>
+                            <Route path={'/withimmer'} element={<WithImmer/>}/>
                             <Route path={'/profiles/*'} element={<Profiles/>}/>
                             <Route path={'/history'} element={<HistorySample/>}/>
                             <Route path={'*'} element={<div>페이지를 찾을 수 없습니다.</div>}/>

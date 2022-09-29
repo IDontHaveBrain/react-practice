@@ -28,7 +28,8 @@ const menuList = [
     {id: 2, name: 'About', link: '/about', icon: <InfoIcon/>},
     {id: 3, name: 'Email Save', link: '/email', icon: <MailIcon/>},
     {id: 4, name: 'Web Excel', link: '/webexcel', icon: <GridOnIcon/>},
-    {id: 5, name: 'Email Save Adv', link: '/emailAdv', icon: <InboxIcon/>},
+    {id: 5, name: 'Email Save Adv(서치 독립 컴포넌트화)', link: '/emailAdv', icon: <InboxIcon/>},
+    {id: 6, name: 'Immer 사용해보기', link: '/withimmer', icon: <InboxIcon/>},
 ];
 const drawerWidth = 240;
 
