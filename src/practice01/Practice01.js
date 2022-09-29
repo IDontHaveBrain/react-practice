@@ -1,4 +1,4 @@
-//import './Practice01.css';
+//import './Practice01Adv.css';
 import EmailTemplate from "./components/EmailTemplate";
 import EmailInsert from "./components/EmailInsert";
 import EmailList from "./components/EmailList";

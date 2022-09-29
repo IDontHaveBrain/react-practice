@@ -28,6 +28,7 @@ const menuList = [
     {id: 2, name: 'About', link: '/about', icon: <InfoIcon/>},
     {id: 3, name: 'Email Save', link: '/email', icon: <MailIcon/>},
     {id: 4, name: 'Web Excel', link: '/webexcel', icon: <GridOnIcon/>},
+    {id: 5, name: 'Email Save Adv', link: '/emailAdv', icon: <InboxIcon/>},
 ];
 const drawerWidth = 240;
 
@@ -96,7 +97,7 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
     }),
 );
 
-const LeftNav = ({children}) => {
+const MenuBase = ({children}) => {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
 
@@ -168,4 +169,4 @@ const LeftNav = ({children}) => {
     );
 }
 
-export default LeftNav;
+export default MenuBase;

@@ -8,8 +8,10 @@ import About from "./About";
 import Profile from "./router-practice/Profile";
 import Profiles from "./router-practice/Profiles";
 import HistorySample from "./router-practice/HistorySample";
-import LeftNav from "./menu/LeftNav";
+import MenuBase from "./menu/MenuBase";
 import {Box, createTheme, CssBaseline, StyledEngineProvider, ThemeProvider} from "@mui/material";
+import Practice01Adv from "./practice01-adv/Practice01Adv";
+import NoImmer from "./immer-practice/NoImmer";
 
 const theme = createTheme({});
 
@@ -18,17 +20,19 @@ function App() {
         <div className="App">
             <StyledEngineProvider injectFirst>
                 <ThemeProvider theme={theme}>
-                    <LeftNav>
+                    <MenuBase>
                         <Routes>
                             <Route path={'/'} element={<Home/>}/>
                             <Route path={'/about'} element={<About/>}/>
                             <Route path={'/email'} element={<Practice01/>}/>
+                            <Route path={'/emailAdv'} element={<Practice01Adv/>}/>
                             <Route path={'/webexcel'} element={<WebExcel/>}/>
+                            <Route path={'/NoImmer'} element={<NoImmer/>}/>
                             <Route path={'/profiles/*'} element={<Profiles/>}/>
                             <Route path={'/history'} element={<HistorySample/>}/>
                             <Route path={'*'} element={<div>페이지를 찾을 수 없습니다.</div>}/>
                         </Routes>
-                    </LeftNav>
+                    </MenuBase>
                 </ThemeProvider>
             </StyledEngineProvider>
         </div>

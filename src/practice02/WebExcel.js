@@ -4,6 +4,7 @@ import EmpList from "./EmpList";
 import EmpFilter from "./EmpFilter";
 import Button from '@mui/material/Button';
 import {DataGrid} from "@mui/x-data-grid";
+import { useDemoData } from '@mui/x-data-grid-generator';
 
 function WebExcel() {
     const initialState = [
@@ -57,8 +58,9 @@ function WebExcel() {
             return item;
         });
         console.log(nextPres);
+        console.log(data);
         setEmp(nextPres);
-    });
+    }, [emp]);
 
     function onImport(e) {
         importEl.current.click();
@@ -70,36 +72,48 @@ function WebExcel() {
         setFilter({...filter, [name]: value});
     });
 
-    const columns = [
-        {field: 'index', headerName: '순번', width: 100},
-        {field: 'name', headerName: '이름', width: 150},
-        {field: 'empno', headerName: '사원번호', width: 150},
-        {field: 'dept', headerName: '부서', width: 150},
-        {field: 'position', headerName: '직급', width: 150},
-        {field: 'hiredate', headerName: '입사일', width: 150},
-    ];
-
-    const getApplyFilterFnSameName = (value) => {
+    const getApplyFilterFnSameYear = (value) => {
+        console.log(value);
+        if (value.indexOf(filter.fname) === -1) {
+            // If the value is not a 4 digit string, it can not be a year so applying this filter is useless
+            return null;
+        }
         return (params) => {
-            return value.indexOf(filter.fname) !== -1;
+            return params.value.getFullYear() === Number(value);
         };
     };
 
-
-    const getApplyFilterFn = (value) => {
-        return (params) => {
-            return value.indexOf(filter.fname) !== -1;
-        };
-    }
-
-    const columns2 = [
+    const columns = [
         {field: 'index', headerName: '순번', width: 100},
-        {field: 'name', headerName: '이름', width: 150, filterable: true, filterOperator: getApplyFilterFn},
+        {field: 'name', headerName: '이름', width: 150, editable: true},
         {field: 'empno', headerName: '사원번호', width: 150},
         {field: 'dept', headerName: '부서', width: 150},
         {field: 'position', headerName: '직급', width: 150},
         {field: 'hiredate', headerName: '입사일', width: 150},
     ];
+
+    const { data } = useDemoData({
+        dataSet: 'Employee',
+        visibleFields: ['name', 'rating', 'country', 'dateCreated', 'isAdmin'],
+        rowLength: 100,
+    });
+
+    const columns2 = useMemo(
+        () =>
+            columns
+                .map((column) => {
+                    if (column.field === 'name') {
+                        return {
+                            ...column,
+                            getApplyQuickFilterFn: getApplyFilterFnSameYear,
+                        };
+                    }
+                    return column;
+                }),
+        [columns],
+    );
+    const grid = useRef(null);
+    //grid.current.startCellEditMode({ id: 1, field: 'name' });
 
     return (
         <div className="App">
@@ -113,7 +127,10 @@ function WebExcel() {
             <br/><br/>
             <div style={{height: 400, width: '100%'}}>
                 <DataGrid getRowId={(row) => row.index} rows={emp} columns={columns} pageSize={20}
-                          filterModel={{items: [{ columnField: 'name', operatorValue: 'contains', value: filter.fname}]}}/>
+                          filterModel={{
+                              items: [{id: 1, columnField: 'name', operatorValue: 'contains', value: filter.fname}],
+                          }}
+                          experimentalFeatures={{ newEditingApi: true }} ref={grid}/>
             </div>
         </div>
     );
