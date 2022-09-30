@@ -47,9 +47,6 @@ const Practice01Adv = () => {
     const onToggle = useCallback(id => {
         setEmails(emails.map(todo => todo.id === id ? {...todo, checked: !todo.checked} : todo));
     }, [emails]);
-    const onSearch = useCallback(text => {
-        setSchText(text);
-    }, [schText]);
 
     const setView = useCallback((data) => {
         setEmailView(data);
