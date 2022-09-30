@@ -22,7 +22,7 @@ import GridOnIcon from "@mui/icons-material/GridOn";
 import {useState} from "react";
 import {Link} from "react-router-dom";
 import WebExcel from "../practice02/WebExcel";
-import {Feed} from "@mui/icons-material";
+import {Feed, Inventory2Outlined} from "@mui/icons-material";
 
 const menuList = [
     {id: 1, name: 'Home', link: '/', icon: <HomeIcon/>},
@@ -32,6 +32,7 @@ const menuList = [
     {id: 5, name: 'Email Save Adv(서치 독립 컴포넌트화)', link: '/emailAdv', icon: <InboxIcon/>},
     {id: 6, name: 'Immer 사용해보기', link: '/withimmer', icon: <InboxIcon/>},
     {id: 7, name: '뉴스 뷰어', link: '/newsviewer', icon: <Feed/>},
+    {id: 8, name: 'Context API', link: '/context', icon: <Inventory2Outlined/>},
 ];
 const drawerWidth = 240;
 
