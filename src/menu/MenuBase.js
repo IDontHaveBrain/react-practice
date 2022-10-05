@@ -19,6 +19,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import GridOnIcon from "@mui/icons-material/GridOn";
+import StudyIcon from '@mui/icons-material/ImportContactsTwoTone';
 import {useState} from "react";
 import {Link} from "react-router-dom";
 import WebExcel from "../practice02/WebExcel";
@@ -33,6 +34,7 @@ const menuList = [
     {id: 6, name: 'Immer 사용해보기', link: '/withimmer', icon: <InboxIcon/>},
     {id: 7, name: '뉴스 뷰어', link: '/newsviewer', icon: <Feed/>},
     {id: 8, name: 'Context API', link: '/context', icon: <Inventory2Outlined/>},
+    {id: 9, name: 'Redux 사용해보기', link: '/reactredux', icon: <StudyIcon/>},
 ];
 const drawerWidth = 240;
 
