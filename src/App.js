@@ -16,6 +16,8 @@ import WithImmer from "./immer-practice/WithImmer";
 import NewsViewer from "./newsViewer/NewsViewer";
 import ContextPractice from "./context-practice/ContextPractice";
 import ReactRedux from "./react-redux/ReactRedux";
+import CodeSplitting from "./code-splitting/CodeSplitting";
+import Ssr from "./ssr/Ssr";
 
 const theme = createTheme({});
 
@@ -37,6 +39,8 @@ function App() {
                             <Route path={'/newsviewer:category'} element={<NewsViewer/>}/>
                             <Route path={'/context'} element={<ContextPractice/>}/>
                             <Route path={'/reactredux'} element={<ReactRedux/>}/>
+                            <Route path={'/codesplitting'} element={<CodeSplitting/>}/>
+                            <Route path={'/ssr/*'} element={<Ssr/>}/>
                             <Route path={'/profiles/*'} element={<Profiles/>}/>
                             <Route path={'/history'} element={<HistorySample/>}/>
                             <Route path={'*'} element={<div>페이지를 찾을 수 없습니다.</div>}/>

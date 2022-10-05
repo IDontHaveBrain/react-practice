@@ -35,6 +35,8 @@ const menuList = [
     {id: 7, name: '뉴스 뷰어', link: '/newsviewer', icon: <Feed/>},
     {id: 8, name: 'Context API', link: '/context', icon: <Inventory2Outlined/>},
     {id: 9, name: 'Redux 사용해보기', link: '/reactredux', icon: <StudyIcon/>},
+    {id: 10, name: '코드 스플리팅', link: '/codesplitting', icon: <StudyIcon/>},
+    {id: 11, name: 'SSR', link: '/ssr', icon: <StudyIcon/>},
 ];
 const drawerWidth = 240;
 
