@@ -13,7 +13,7 @@ const CodeSplitting = () => {
 
     return (
         <div>
-        <h1 onClick={onClick2}>Code Splitting</h1>
+        <h1 onClick={onClick2}>Click Me!!</h1>
             <Suspense fallback={<div>loading...</div>}>
                 {visible && <SplitMe />}
             </Suspense>

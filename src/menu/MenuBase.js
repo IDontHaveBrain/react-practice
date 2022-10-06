@@ -27,16 +27,17 @@ import {Feed, Inventory2Outlined} from "@mui/icons-material";
 
 const menuList = [
     {id: 1, name: 'Home', link: '/', icon: <HomeIcon/>},
-    {id: 2, name: 'About', link: '/about', icon: <InfoIcon/>},
-    {id: 3, name: 'Email Save', link: '/email', icon: <MailIcon/>},
-    {id: 4, name: 'Web Excel', link: '/webexcel', icon: <GridOnIcon/>},
-    {id: 5, name: 'Email Save Adv(서치 독립 컴포넌트화)', link: '/emailAdv', icon: <InboxIcon/>},
-    {id: 6, name: 'Immer 사용해보기', link: '/withimmer', icon: <InboxIcon/>},
-    {id: 7, name: '뉴스 뷰어', link: '/newsviewer', icon: <Feed/>},
-    {id: 8, name: 'Context API', link: '/context', icon: <Inventory2Outlined/>},
-    {id: 9, name: 'Redux 사용해보기', link: '/reactredux', icon: <StudyIcon/>},
-    {id: 10, name: '코드 스플리팅', link: '/codesplitting', icon: <StudyIcon/>},
-    {id: 11, name: 'SSR', link: '/ssr', icon: <StudyIcon/>},
+    {id: 2, name: 'About', link: '/about?detail=true&mode=55', icon: <InfoIcon/>},
+    {id: 3, name: 'Profiles', link: '/profiles', icon: <InfoIcon/>},
+    {id: 4, name: 'Email Save', link: '/email', icon: <MailIcon/>},
+    {id: 5, name: 'Web Excel', link: '/webexcel', icon: <GridOnIcon/>},
+    {id: 6, name: 'Email Save Adv(서치 독립 컴포넌트화)', link: '/emailAdv', icon: <InboxIcon/>},
+    {id: 7, name: 'Immer 사용해보기', link: '/withimmer', icon: <InboxIcon/>},
+    {id: 8, name: '뉴스 뷰어', link: '/newsviewer', icon: <Feed/>},
+    {id: 9, name: 'Context API', link: '/context', icon: <Inventory2Outlined/>},
+    {id: 10, name: 'Redux 사용해보기', link: '/reactredux', icon: <StudyIcon/>},
+    {id: 11, name: '코드 스플리팅', link: '/codesplitting', icon: <StudyIcon/>},
+    {id: 12, name: 'SSR', link: '/ssr', icon: <StudyIcon/>},
 ];
 const drawerWidth = 240;
 
